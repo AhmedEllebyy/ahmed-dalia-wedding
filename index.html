@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmed & Dalia | Wedding Invitation</title>
+<meta name="theme-color" content="#f8f1ec">
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;background:#f8f1ec;color:#604c47;
+  font-family:Georgia,"Times New Roman",serif;
+  text-align:center;min-height:100vh;padding:24px 14px;
+}
+.card{
+  max-width:650px;margin:auto;padding:45px 22px;
+  border:1px solid #c9a77c;background:#fffdf9;
+  position:relative;
+}
+.card:before{
+  content:"";position:absolute;inset:8px;
+  border:1px solid #ead9c7;pointer-events:none;
+}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:11px}
+.flower{font-size:30px;color:#b78c82;margin:18px 0}
+h1{font-size:clamp(42px,9vw,66px);font-weight:normal;
+  line-height:1.08;margin:24px 0;color:#9a7068}
+.amp{font-style:italic;font-size:.72em;color:#c5a17d}
+.subtitle{font-size:17px;line-height:1.9;margin:22px auto}
+.rule{width:75px;border:0;border-top:1px solid #c9a77c;margin:26px auto}
+.date{font-size:23px;letter-spacing:2px;line-height:1.7}
+.venue{font-size:18px;line-height:1.8}
+#countdown{display:flex;justify-content:center;gap:12px;
+  margin:25px 0;flex-wrap:wrap}
+.unit{min-width:65px;padding:10px 7px;border:1px solid #ead9c7}
+.number{display:block;font-size:25px;color:#9a7068}
+.label{font:10px Arial,sans-serif;letter-spacing:1px}
+.button{
+  display:inline-block;margin:10px 5px;padding:13px 19px;
+  background:#9a7068;color:white;text-decoration:none;
+  font:12px Arial,sans-serif;letter-spacing:1px;
+}
+.note{font-size:13px;font-style:italic;margin-top:28px}
+footer{font-size:11px;letter-spacing:2px;margin-top:28px}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="eyebrow">Together with our families</div>
+  <div class="flower">❦</div>
+  <p class="subtitle">Joyfully invite you to celebrate the wedding of</p>
+  <h1>Ahmed<br><span class="amp">&</span><br>Dalia</h1>
+  <hr class="rule">
+  <p class="subtitle">A beautiful beginning to our forever</p>
+  <div class="date">FRIDAY<br>20 NOVEMBER 2026</div>
+  <hr class="rule">
+  <div class="eyebrow">The Celebration</div>
+  <p class="venue"><strong>Le Ciel</strong><br>Le Terrace Hall</p>
+  <div class="eyebrow">Counting down to our day</div>
+  <div id="countdown">
+    <div class="unit"><span class="number" id="days">--</span><span class="label">DAYS</span></div>
+    <div class="unit"><span class="number" id="hours">--</span><span class="label">HOURS</span></div>
+    <div class="unit"><span class="number" id="minutes">--</span><span class="label">MINUTES</span></div>
+    <div class="unit"><span class="number" id="seconds">--</span><span class="label">SECONDS</span></div>
+  </div>
+  <a class="button"
+     href="https://www.google.com/maps/search/?api=1&query=Le+Ciel+Le+Terrace+Hall"
+     target="_blank" rel="noopener">OPEN LOCATION ↗</a>
+  <p class="note">We can't wait to celebrate with you.</p>
+  <div class="flower">♡</div>
+  <footer>WITH LOVE, AHMED & DALIA</footer>
+</main>
+<script>
+const weddingDate = new Date("2026-11-20T00:00:00+02:00").getTime();
+function updateCountdown(){
+  let diff = weddingDate - Date.now();
+  if(diff <= 0){
+    document.getElementById("countdown").innerHTML =
+      "<p>Today is our special day! ♡</p>";
+    return;
+  }
+  const values = {
+    days: Math.floor(diff / 86400000),
+    hours: Math.floor(diff % 86400000 / 3600000),
+    minutes: Math.floor(diff % 3600000 / 60000),
+    seconds: Math.floor(diff % 60000 / 1000)
+  };
+  for(const key in values)
+    document.getElementById(key).textContent = values[key];
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
