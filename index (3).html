@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f2e9">
+<title>Ahmed &amp; Dalia — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#f7f3eb;--paper:#fffdf8;--green:#69785d;--deep:#344536;--gold:#b79a61;--muted:#77766a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--deep);font-family:Montserrat,Arial,sans-serif;font-weight:300}
+button,a{font:inherit}.hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px 18px;overflow:hidden;background:linear-gradient(180deg,rgba(38,42,27,.16),rgba(38,42,27,.30)),url('wedding-hall.png') center/cover fixed}
+.hero:before{content:"";position:absolute;inset:16px;border:1px solid rgba(183,154,97,.9);pointer-events:none}
+.hero-inner{position:relative;max-width:490px;width:min(100%,490px);color:var(--deep);padding:42px 28px;background:rgba(250,246,236,.94);border:1px solid var(--gold);box-shadow:0 20px 70px rgba(31,35,22,.28);outline:1px solid rgba(255,255,255,.7);outline-offset:-8px;border-radius:150px 150px 2px 2px}
+.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:10px}
+.hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(58px,10vw,104px);line-height:.88;margin:28px 0 18px}
+.amp{font-style:italic;color:var(--gold)}.hero p{letter-spacing:.12em;text-transform:uppercase;font-size:11px;line-height:2;color:#565941}
+.open-btn,.pill{border:1px solid var(--gold);background:var(--green);color:#fffdf7;padding:14px 24px;letter-spacing:.15em;text-transform:uppercase;font-size:10px;cursor:pointer;transition:.25s}
+.open-btn:hover{background:var(--deep);color:#fffdf7}
+.flower{color:var(--gold);font-size:23px;letter-spacing:.25em}
+main{max-width:100%;margin:auto;padding:70px max(22px,calc((100% - 900px)/2)) 55px;position:relative;isolation:isolate;background:linear-gradient(rgba(248,244,235,.88),rgba(248,244,235,.94)),url('wedding-hall.png') center top/cover fixed}
+main:before{content:'❧';position:absolute;z-index:-1;left:0;top:35px;font-family:Georgia,serif;font-size:110px;color:rgba(105,120,93,.22);transform:rotate(-25deg)}
+main:after{content:'❧';position:absolute;z-index:-1;right:0;bottom:30px;font-family:Georgia,serif;font-size:120px;color:rgba(183,154,97,.24);transform:rotate(25deg)}
+.section{text-align:center;padding:32px 0 52px;position:relative}
+.kicker{color:var(--green);font-size:10px;letter-spacing:.25em;text-transform:uppercase}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(38px,7vw,60px);font-weight:400;margin:13px 0;color:var(--deep)}
+.names{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(32px,6vw,48px);font-style:italic;color:var(--green);margin:14px 0}
+.copy{max-width:570px;margin:0 auto;color:#77766a;font-size:13px;line-height:2}
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:26px 0}.divider:before,.divider:after{content:"";height:1px;width:65px;background:#d7c9a7}
+.countdown{display:flex;justify-content:center;gap:clamp(12px,4vw,38px);margin:28px auto 0;flex-wrap:wrap}
+.time{min-width:62px}.num{font-family:"Cormorant Garamond",Georgia,serif;font-size:43px;color:var(--green)}.unit{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:10px 0 48px}
+.detail{background:rgba(255,253,248,.88);border:1px solid #d8c69e;padding:30px 20px;text-align:center;box-shadow:0 12px 35px rgba(54,68,49,.09);backdrop-filter:blur(3px)}
+.detail .icon{font-size:24px;color:var(--gold)}.detail h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:27px;font-weight:500;margin:12px 0}.detail p{font-size:12px;color:var(--muted);line-height:1.9}
+.detail a{display:inline-block;color:var(--green);text-decoration:none;border-bottom:1px solid #b7c0ab;padding-bottom:4px;font-size:11px;margin-top:6px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.pill{background:var(--green);border-color:var(--green);text-decoration:none;display:inline-block}.pill:hover{background:var(--deep)}
+footer{text-align:center;padding:22px;color:var(--muted);font-family:"Cormorant Garamond",Georgia,serif;font-size:20px}
+.music{position:fixed;right:18px;bottom:18px;z-index:5;background:var(--deep);color:#fffdf7;border:1px solid var(--gold);border-radius:50px;padding:12px 16px;font-size:11px;letter-spacing:.04em;box-shadow:0 6px 22px #0002;cursor:pointer}
+.music span{color:#e3d1a4;margin-right:7px}
+.hidden{display:none}
+@media(max-width:600px){.details{grid-template-columns:1fr}main{padding:42px 18px 35px;background-attachment:scroll}.hero{background-attachment:scroll}.hero:before{inset:10px}.hero-inner{padding:38px 18px;border-radius:110px 110px 2px 2px}.hero h1{font-size:clamp(54px,15vw,78px)}.hero p{font-size:10px}}
+</style>
+</head>
+<body>
+<section class="hero" id="welcome">
+  <div class="hero-inner">
+    <div class="eyebrow">Together with our families</div>
+    <div class="flower" style="margin-top:25px">❧ ✧ ❧</div>
+    <h1>Ahmed <span class="amp">&amp;</span><br>Dalia</h1>
+    <p>Invite you to celebrate<br>the beginning of forever</p>
+    <div style="margin:27px 0 23px;color:#e8d8b4;letter-spacing:.18em;font-size:12px">20 · 11 · 2026</div>
+    <button class="open-btn" id="openInvite">Open your invitation</button>
+  </div>
+</section>
+<main id="invitation" class="hidden">
+  <section class="section">
+    <div class="kicker">Together with our families</div>
+    <h2>Joyfully invite you to celebrate</h2>
+    <div class="divider">✧</div>
+    <div class="names">Ahmed <span class="amp">&amp;</span> Dalia</div>
+    <p class="copy">Two hearts, one beautiful story. We would be delighted to have you with us as we celebrate our wedding day and begin our forever together.</p>
+  </section>
+  <section class="section">
+    <div class="kicker">Save the date</div>
+    <h2>Friday, November 20, 2026</h2>
+    <div class="countdown" id="countdown">
+      <div class="time"><div class="num" id="days">--</div><div class="unit">Days</div></div>
+      <div class="time"><div class="num" id="hours">--</div><div class="unit">Hours</div></div>
+      <div class="time"><div class="num" id="minutes">--</div><div class="unit">Minutes</div></div>
+      <div class="time"><div class="num" id="seconds">--</div><div class="unit">Seconds</div></div>
+    </div>
+  </section>
+  <section class="details">
+    <div class="detail">
+      <div class="icon">✧</div><h3>The Celebration</h3>
+      <p>Friday, November 20, 2026 · 6:00 PM<br>We can't wait to celebrate with you.</p>
+    </div>
+    <div class="detail">
+      <div class="icon">⌖</div><h3>Le Ciel</h3>
+      <p>Le Terrace Hall<br>Le Ciel Hotel · 6:00 PM</p>
+      <a href="https://maps.app.goo.gl/qfBSgFuLQhjtwZbQ7" target="_blank" rel="noopener">Open map</a>
+    </div>
+  </section>
+  <section class="section">
+    <div class="flower">❧ ✧ ❧</div>
+    <h2>We look forward to seeing you</h2>
+    <p class="copy">Your presence will make our day even more special.</p>
+    <div class="divider">With love</div>
+    <div class="actions">
+      <button class="pill" id="shareBtn">Share invitation</button>
+      <a class="pill" href="#welcome">Back to top</a>
+    </div>
+  </section>
+</main>
+<footer>Made with love · Ahmed &amp; Dalia</footer>
+<button class="music" id="musicBtn" aria-label="Play or pause romantic piano"><span>♫</span><b id="musicLabel">Play piano music</b></button>
+<audio id="piano" src="romantic-piano.wav" preload="auto" loop></audio>
+<script>
+const openBtn=document.getElementById('openInvite');
+const invitation=document.getElementById('invitation');
+const piano=document.getElementById('piano');
+const musicBtn=document.getElementById('musicBtn');
+const musicLabel=document.getElementById('musicLabel');
+openBtn.addEventListener('click',()=>{
+  invitation.classList.remove('hidden');
+  invitation.scrollIntoView({behavior:'smooth'});
+  piano.play().then(()=>{musicLabel.textContent='Pause piano music'}).catch(()=>{});
+});
+musicBtn.addEventListener('click',()=>{
+  if(piano.paused){piano.play().then(()=>musicLabel.textContent='Pause piano music').catch(()=>musicLabel.textContent='Tap to play music');}
+  else{piano.pause();musicLabel.textContent='Play piano music';}
+});
+const target=new Date('2026-11-20T18:00:00+02:00').getTime();
+function updateCountdown(){
+  let diff=target-Date.now(); if(diff<0)diff=0;
+  document.getElementById('days').textContent=Math.floor(diff/86400000);
+  document.getElementById('hours').textContent=Math.floor(diff%86400000/3600000);
+  document.getElementById('minutes').textContent=Math.floor(diff%3600000/60000);
+  document.getElementById('seconds').textContent=Math.floor(diff%60000/1000);
+}
+updateCountdown();setInterval(updateCountdown,1000);
+document.getElementById('shareBtn').addEventListener('click',async()=>{
+  const shareData={title:'Ahmed & Dalia — Wedding Invitation',text:'Join us to celebrate Ahmed & Dalia on November 20, 2026.',url:location.href};
+  try{if(navigator.share)await navigator.share(shareData);else{await navigator.clipboard.writeText(location.href);alert('Invitation link copied!');}}
+  catch(e){if(e.name!=='AbortError')alert('Copy the invitation link from your browser address bar to share it.');}
+});
+</script>
+</body>
+</html>
