@@ -11,7 +11,7 @@
 <style>
 :root{--ivory:#f7f3eb;--paper:#fffdf8;--green:#69785d;--deep:#344536;--gold:#b79a61;--muted:#77766a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--deep);font-family:Montserrat,Arial,sans-serif;font-weight:300}
-button,a{font:inherit}.hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px 18px;overflow:hidden;background:linear-gradient(180deg,rgba(27,43,31,.25),rgba(25,40,28,.60)),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85') center/cover}
+button,a{font:inherit}.hero{min-height:100svh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px 18px;overflow:hidden;background:linear-gradient(180deg,rgba(39,43,29,.22),rgba(39,43,29,.48)),url('wedding-hall.png') center/cover}
 .hero:before{content:"";position:absolute;inset:16px;border:1px solid rgba(244,231,197,.65);pointer-events:none}
 .hero-inner{position:relative;max-width:720px;color:#fffdf7;padding:38px 18px}
 .eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:10px}
@@ -20,8 +20,15 @@ button,a{font:inherit}.hero{min-height:100svh;position:relative;display:flex;ali
 .open-btn,.pill{border:1px solid #e3d1a4;background:rgba(255,253,247,.08);color:#fffdf7;padding:14px 24px;letter-spacing:.15em;text-transform:uppercase;font-size:10px;cursor:pointer;transition:.25s}
 .open-btn:hover{background:#fffdf7;color:var(--deep)}
 .flower{color:var(--gold);font-size:23px;letter-spacing:.25em}
-main{max-width:900px;margin:auto;padding:70px 22px 55px}
-.section{text-align:center;padding:32px 0 52px}
+main{max-width:1000px;margin:0 auto;padding:70px 22px 55px;position:relative;isolation:isolate;background:linear-gradient(rgba(248,244,235,.91),rgba(248,244,235,.94)),url('wedding-hall.png') center top/cover fixed;border-left:1px solid rgba(183,154,97,.25);border-right:1px solid rgba(183,154,97,.25)}
+main:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at top left,rgba(105,120,93,.10),transparent 34%),radial-gradient(ellipse at bottom right,rgba(183,154,97,.12),transparent 38%)}
+.section{text-align:center;padding:32px 0 52px;position:relative}
+.section:first-child:before,.section:last-child:after{content:'❧  ✧  ❧';display:block;color:#9a9b75;letter-spacing:.35em;font-size:22px;margin:0 auto 18px;opacity:.8}
+.detail{border-radius:2px;background:rgba(255,253,248,.88);backdrop-filter:blur(3px)}
+.time{min-width:76px;padding:12px 10px;border:1px solid #d5c29a;border-radius:5px;background:rgba(255,253,248,.72)}
+.num{line-height:1.1}
+.hero:after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 25%,rgba(30,36,25,.16) 100%);pointer-events:none}
+.hero-inner{z-index:1}
 .kicker{color:var(--green);font-size:10px;letter-spacing:.25em;text-transform:uppercase}
 h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(38px,7vw,60px);font-weight:400;margin:13px 0;color:var(--deep)}
 .names{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(32px,6vw,48px);font-style:italic;color:var(--green);margin:14px 0}
@@ -77,8 +84,8 @@ footer{text-align:center;padding:22px;color:var(--muted);font-family:"Cormorant 
     </div>
     <div class="detail">
       <div class="icon">⌖</div><h3>Le Ciel</h3>
-      <p>Wedding venue<br>Please confirm the exact hall/location details with the hosts.</p>
-      <a href="https://www.google.com/maps/search/?api=1&query=Le+Ciel+wedding+venue+Egypt" target="_blank" rel="noopener">Open map</a>
+      <p>Le Terrace Hall<br>Friday, November 20, 2026 · 6:00 PM</p>
+      <a href="https://maps.app.goo.gl/qfBSgFuLQhjtwZbQ7" target="_blank" rel="noopener">Open in Google Maps</a>
     </div>
   </section>
   <section class="section">
@@ -110,7 +117,7 @@ musicBtn.addEventListener('click',()=>{
   if(piano.paused){piano.play().then(()=>musicLabel.textContent='Pause piano music').catch(()=>musicLabel.textContent='Tap to play music');}
   else{piano.pause();musicLabel.textContent='Play piano music';}
 });
-const target=new Date('2026-11-20T00:00:00+02:00').getTime();
+const target=new Date('2026-11-20T18:00:00+02:00').getTime();
 function updateCountdown(){
   let diff=target-Date.now(); if(diff<0)diff=0;
   document.getElementById('days').textContent=Math.floor(diff/86400000);
